@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Restaurant Setup</title>
+    <script src="setup.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Restaurant Setup</h1>
+    <form action="http://hardboiledmysteries.com:8080/post/database/restaurant-setup" method="post">
+        <h2>Input Restaurant Info Here</h2>
+        <label for="restaurant-name">Restaurant Name</label>
+        <input name="restaurant-name" id="restaurant-name" type="text">
+        <input type="submit">
+        <fieldset class="big" id="hours-area">
+            <h3>Hours</h3>
+        </fieldset>
+        <fieldset class="big" id="tables-area">
+            <h3>Tables</h3>
+            <p>
+                <label for="table-type">Table Type</label>
+                <select onclick="changingTableType()" id="table-type" name="table-type">
+                    <option value="table">Table</option>
+                    <option value="booth">Booth</option>
+                    <option value="hightop">High-Top</option>
+                    <option value="halfbooth">Half Booth Half Table</option>
+                </select>
+                <label for="size-per-table">Size Per Table</label>
+                <input type="number" id="size-per-table" name="size-per-table" min="1" max="8" value="1" required>
+                <label for="number-of-tables">Number of Tables (that can be put together)</label>
+                <input type="number" id="number-of-tables" name="number-of-tables" min="1" max="8" value="1" required>
+                <button type="button" onclick="addTableSection();">Add Table Section</button>
+            </p>
+            <ol id="table-sections"></ol>
+        </fieldset>
+    </form>
+    <script>
+        window.onload = async function() {
+            await setupHours();
+        }
+    </script>
+</body>
+
+</html>

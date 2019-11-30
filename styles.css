@@ -1,0 +1,49 @@
+* {
+    margin: .5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    color: rgb(48, 48, 48);
+    background-color: rgb(233, 232, 230);
+}
+
+.row label {
+    width: 15em;
+    display: inline-block;
+}
+
+button:hover,
+button:focus {
+    background-color: lavender;
+}
+
+input[type=submit] {
+    /* float: right; */
+    right: 1em;
+    top: 1em;
+    position: fixed;
+    background-color: lawngreen;
+    font-size: 2em;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+    background-color: yellow;
+}
+
+
+/* form>* {
+    display: block;
+}
+
+fieldset.big {
+    display: inline-block !important;
+    width: 45vw;
+} */
+
+
+/* form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}  */
