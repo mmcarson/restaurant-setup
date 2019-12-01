@@ -9,7 +9,7 @@
 
 <body>
     <h1>Restaurant Setup</h1>
-    <form action="http://hardboiledmysteries.com:8080/post/database/restaurant-setup" method="post">
+    <form action="http://localhost:8080/post/database/restaurant-setup" method="post">
         <h2>Input Restaurant Info Here</h2>
         <label for="restaurant-name">Restaurant Name</label>
         <input name="restaurant-name" id="restaurant-name" type="text">
@@ -28,12 +28,13 @@
                     <option value="halfbooth">Half Booth Half Table</option>
                 </select>
                 <label for="size-per-table">Size Per Table</label>
-                <input type="number" id="size-per-table" name="size-per-table" min="1" max="8" value="1" required>
+                <input type="number" id="size-per-table" name="size-per-table" min="1" max="8" value="4" required>
                 <label for="number-of-tables">Number of Tables (that can be put together)</label>
                 <input type="number" id="number-of-tables" name="number-of-tables" min="1" max="8" value="1" required>
                 <button type="button" onclick="addTableSection();">Add Table Section</button>
             </p>
             <ol id="table-sections"></ol>
+            <input type="hidden" id="number-of-sections" name="number-of-sections" value="0">
         </fieldset>
     </form>
     <script>

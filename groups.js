@@ -12,7 +12,7 @@ function randomize(array) {
 
 function createGroups() {
     let shuffled = randomize(students);
-    let groups = [shuffled.slice(0, 3), shuffled.slice(3, 6), shuffled.slice(6, 9), shuffled.slice(9, 11)];
+    let groups = [shuffled.slice(0, 4), shuffled.slice(4, 8), shuffled.slice(8, 11)];
     return groups;
 }
 

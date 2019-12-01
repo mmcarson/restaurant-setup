@@ -6,6 +6,7 @@ function createTimeInput(startOrEnd, day) {
     time.setAttribute("id", startOrEnd + day);
     time.setAttribute("name", startOrEnd + day);
     time.setAttribute("required", true);
+    time.setAttribute("value", startOrEnd == "start" ? "11:00" : "22:00");
     return time;
 }
 
@@ -58,5 +59,11 @@ function addTableSection() {
     tableSize = document.getElementById("size-per-table").value;
     row.innerText = "Section of " + numberTables + " " + type + "(s) with " + tableSize + " seats each";
     list.appendChild(row);
-    // row.appendChild()
+    row.appendChild(createHiddenInput("tableSection" + list.children.length + "type", type));
+    row.appendChild(createHiddenInput("tableSection" + list.children.length + "numberTables", numberTables));
+    row.appendChild(createHiddenInput("tableSection" + list.children.length + "tableSize", tableSize));
+
+    document.getElementById("number-of-sections").setAttribute("value", list.children.length);
+    console.log("list length: " + list.children.length);
+    console.log("number of sections: " + document.getElementById("number-of-sections").value);
 }
